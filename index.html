@@ -6,11 +6,9 @@
 <title>ABC Tours and Travel</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* Reset */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
 body { background:#000; color:#fff; }
 
-/* Navigation */
 nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:#111; position:sticky; top:0; z-index:1000; }
 nav img { height:50px; }
 nav ul { display:flex; list-style:none; gap:30px; }
@@ -18,20 +16,17 @@ nav ul li a { text-decoration:none; color:#D4AF37; font-weight:600; position:rel
 nav ul li a::after { content:""; position:absolute; width:0%; height:2px; bottom:0; left:0; background:#D4AF37; transition:width 0.3s; }
 nav ul li a:hover::after { width:100%; }
 
-/* Hero */
 .hero { height:100vh; background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1600') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; position:relative; }
 .hero h1 { color:#D4AF37; font-size:4rem; margin-bottom:20px; text-shadow:2px 2px 15px #000; }
 .hero p { color:#fff; font-size:1.5rem; margin-bottom:30px; text-shadow:1px 1px 10px #000; }
 .hero a { text-decoration:none; background:#D4AF37; color:#000; padding:15px 30px; border-radius:50px; font-weight:700; margin:5px; transition:all 0.3s; }
 .hero a:hover { background:#fff; color:#000; transform:scale(1.05); }
 
-/* Sections */
 section { padding:100px 50px; max-width:1400px; margin:auto; }
 h2 { color:#D4AF37; font-size:2.5rem; margin-bottom:50px; text-align:center; }
 
-/* Cards Grid */
 .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.card { background:#111; border-radius:15px; overflow:hidden; position:relative; cursor:pointer; transition:transform 0.5s; }
+.card { background:#111; border-radius:15px; overflow:hidden; position:relative; cursor:pointer; transition:transform 0.5s; text-decoration:none; color:inherit; }
 .card img { width:100%; height:200px; object-fit:cover; transition:transform 0.5s; }
 .card:hover img { transform:scale(1.1); }
 .card:hover::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; border:2px solid #D4AF37; border-radius:15px; box-shadow:0 0 20px #D4AF37; }
@@ -39,17 +34,14 @@ h2 { color:#D4AF37; font-size:2.5rem; margin-bottom:50px; text-align:center; }
 .card h3 { color:#D4AF37; margin-bottom:10px; }
 .card p { color:#ccc; font-size:0.95rem; }
 
-/* Testimonials */
 .testimonials { background:#111; border-radius:15px; padding:50px; margin-top:50px; }
 .testimonial { background:#000; padding:20px; margin:20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:transform 0.3s; }
 .testimonial:hover { transform:translateY(-5px); }
 .testimonial p { font-style:italic; color:#ccc; }
 .testimonial h4 { color:#D4AF37; margin-top:10px; }
 
-/* Footer */
 footer { text-align:center; padding:30px; color:#ccc; background:#111; }
 
-/* Responsive */
 @media(max-width:768px){
   nav { flex-direction:column; gap:10px; padding:15px 20px; }
   .hero h1{ font-size:3rem; }
@@ -59,7 +51,6 @@ footer { text-align:center; padding:30px; color:#ccc; background:#111; }
 </head>
 <body>
 
-<!-- Navigation -->
 <nav>
   <img src="https://via.placeholder.com/150x50.png?text=ABC+Tours+Logo" alt="Logo">
   <ul>
@@ -70,7 +61,6 @@ footer { text-align:center; padding:30px; color:#ccc; background:#111; }
   </ul>
 </nav>
 
-<!-- Hero -->
 <div class="hero" id="hero">
   <h1>ABC Tours and Travel</h1>
   <p>Experience South Africa's most stunning destinations</p>
@@ -78,53 +68,50 @@ footer { text-align:center; padding:30px; color:#ccc; background:#111; }
   <a href="#tours">Explore Tours</a>
 </div>
 
-<!-- Accommodations Section -->
 <section id="accommodations">
   <h2>Featured Accommodations</h2>
   <div class="cards">
-    <div class="card">
+    <a href="forest-edge.html" class="card">
       <img src="https://images.unsplash.com/photo-1571501679680-de32f1e7aad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Forest Edge Nature Retreat">
       <div class="content"><h3>Forest Edge Nature Retreat</h3><p>Knysna | R1600 per night | Luxury lodge with stunning forest views</p></div>
-    </div>
-    <div class="card">
+    </a>
+    <a href="seaside-paradise.html" class="card">
       <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Seaside Paradise">
       <div class="content"><h3>Seaside Paradise</h3><p>Paternoster | R1800 per night | Beachfront accommodation for a relaxing stay</p></div>
-    </div>
-    <div class="card">
+    </a>
+    <a href="mountain-view.html" class="card">
       <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Mountain View Lodge">
       <div class="content"><h3>Mountain View Lodge</h3><p>Drakensberg | R2000 per night | Cozy lodge with breathtaking mountain views</p></div>
-    </div>
-    <div class="card">
+    </a>
+    <a href="safari-camp.html" class="card">
       <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Safari Adventure Camp">
       <div class="content"><h3>Safari Adventure Camp</h3><p>Kruger Park | R2200 per night | Experience luxury safari in style</p></div>
-    </div>
+    </a>
   </div>
 </section>
 
-<!-- Tours Section -->
 <section id="tours">
   <h2>Featured Tours</h2>
   <div class="cards">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1533106418989-88406d4d7f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Wine Tasting Tour">
+    <a href="wine-tour.html" class="card">
+      <img src="https:https://images.unsplash.com/photo-1558670460-cad0c19b1840?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wine Tasting Tour">
       <div class="content"><h3>Wine Tasting Tour</h3><p>Stellenbosch | Half-day tour | Explore premium vineyards and tastings</p></div>
-    </div>
-    <div class="card">
+    </a>
+    <a href="safari-experience.html" class="card">
       <img src="https://plus.unsplash.com/premium_photo-1661866819978-7393e9d985bc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Safari Experience">
       <div class="content"><h3>Safari Experience</h3><p>Kruger Park | Full-day tour | Enjoy the Big 5 with expert guides</p></div>
-    </div>
-    <div class="card">
+    </a>
+    <a href="city-tour.html" class="card">
       <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Cape Town City Tour">
       <div class="content"><h3>Cape Town City Tour</h3><p>Cape Town | Half-day tour | Discover the beauty and history of the city</p></div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1560860587-77f40d87f1b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Adventure Hiking">
+    </a>
+    <a href="hiking-tour.html" class="card">
+      <img src="https:https://plus.unsplash.com/premium_photo-1661810803959-f91f5195138e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Adventure Hiking">
       <div class="content"><h3>Adventure Hiking</h3><p>Drakensberg | Full-day tour | Guided hikes through scenic mountain trails</p></div>
-    </div>
+    </a>
   </div>
 </section>
 
-<!-- Testimonials -->
 <section class="testimonials">
   <h2>What Our Customers Say</h2>
   <div class="cards">
@@ -143,7 +130,6 @@ footer { text-align:center; padding:30px; color:#ccc; background:#111; }
   </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact">
   <h2>Contact Us</h2>
   <p style="text-align:center; max-width:600px; margin:auto; color:#ccc;">
@@ -151,7 +137,6 @@ footer { text-align:center; padding:30px; color:#ccc; background:#111; }
   </p>
 </section>
 
-<!-- Footer -->
 <footer>
   &copy; 2026 ABC Tours and Travel. All Rights Reserved.
 </footer>
