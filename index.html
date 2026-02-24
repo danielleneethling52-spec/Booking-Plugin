@@ -3,44 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danielle Neethling - Booking Plugin Demo</title>
+<title>ABC Tours and Travel</title>
 <link rel="stylesheet" href="css/style.css">
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 20px;
+        text-align: center;
+    }
+    h1 {
+        color: #D4AF37;
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+    p.intro {
+        font-size: 1.2rem;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto 50px auto;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .card {
+        background-color: #111;
+        color: #D4AF37;
+        padding: 30px;
+        border-radius: 15px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+        overflow: hidden;
+        position: relative;
+    }
+    .card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    }
+    .card h2 {
+        margin: 15px 0 10px 0;
+        font-size: 1.8rem;
+    }
+    .card p {
+        font-size: 1rem;
+        color: #ccc;
+    }
+    .about {
+        margin-top: 80px;
+        padding: 50px 20px;
+        background-color: #111;
+        border-radius: 15px;
+    }
+    .about h2 {
+        color: #D4AF37;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .about p {
+        color: #ccc;
+        font-size: 1.1rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+</style>
 </head>
 <body>
 
 <div class="container">
-    <h1 style="text-align:center; color:#FFD700; margin-top:50px;">Danielle Neethling Portfolio</h1>
-    <p style="text-align:center; color:#fff; font-size:18px;">
-        Self-taught Full Stack Developer | WordPress Plugins | Tours & Accommodations Booking Demo
+    <h1>ABC Tours and Travel</h1>
+    <p class="intro">
+        Explore South Africa like never before. Book premium accommodations and exciting tours with ABC Tours and Travel. Self-taught Full Stack Developer showcasing interactive booking demos.
     </p>
 
     <!-- Navigation Cards -->
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:50px;">
+    <div class="cards">
         
         <!-- Accommodations -->
         <a href="accommodations.html" style="text-decoration:none;">
-            <div style="background:#111; color:#FFD700; padding:30px; border-radius:15px; width:250px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.5); transition:transform 0.3s;">
+            <div class="card">
+                <img src="images/forestedge.jpg" alt="Accommodations">
                 <h2>Accommodations</h2>
-                <p>View available accommodations with premium booking form</p>
+                <p>View available accommodations with premium booking form and beautiful locations.</p>
             </div>
         </a>
 
         <!-- Tours -->
         <a href="tours.html" style="text-decoration:none;">
-            <div style="background:#111; color:#FFD700; padding:30px; border-radius:15px; width:250px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.5); transition:transform 0.3s;">
+            <div class="card">
+                <img src="images/tour1.jpg" alt="Tours">
                 <h2>Tours</h2>
-                <p>Explore tours and interactive booking demos</p>
+                <p>Explore our curated tours across South Africa with interactive booking options.</p>
             </div>
         </a>
 
-        <!-- Payment Demo -->
-        <a href="payment.html" style="text-decoration:none;">
-            <div style="background:#111; color:#FFD700; padding:30px; border-radius:15px; width:250px; text-align:center; box-shadow:0 10px 30px rgba(0,0,0,0.5); transition:transform 0.3s;">
-                <h2>Payment Demo</h2>
-                <p>Test the interactive payment page with upsells</p>
-            </div>
-        </a>
+    </div>
 
+    <!-- About Section -->
+    <div class="about">
+        <h2>About ABC Tours and Travel</h2>
+        <p>
+            ABC Tours and Travel is dedicated to delivering unforgettable travel experiences in South Africa. We specialize in providing premium accommodations, exciting tours, and seamless booking systems. Explore, book, and enjoy your journey with us.
+        </p>
     </div>
 </div>
 
