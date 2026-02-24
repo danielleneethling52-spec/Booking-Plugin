@@ -4,124 +4,175 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ABC Tours and Travel</title>
-<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #000;
-        color: #fff;
-    }
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 50px 20px;
-        text-align: center;
-    }
-    h1 {
-        color: #D4AF37;
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-    p.intro {
-        font-size: 1.2rem;
-        color: #ccc;
-        max-width: 800px;
-        margin: 0 auto 50px auto;
-    }
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-    }
-    .card {
-        background-color: #111;
-        color: #D4AF37;
-        padding: 30px;
-        border-radius: 15px;
-        width: 300px;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: transform 0.3s, box-shadow 0.3s;
-        overflow: hidden;
-        position: relative;
-    }
-    .card img {
-        width: 100%;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-    }
-    .card h2 {
-        margin: 15px 0 10px 0;
-        font-size: 1.8rem;
-    }
-    .card p {
-        font-size: 1rem;
-        color: #ccc;
-    }
-    .about {
-        margin-top: 80px;
-        padding: 50px 20px;
-        background-color: #111;
-        border-radius: 15px;
-    }
-    .about h2 {
-        color: #D4AF37;
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-    .about p {
-        color: #ccc;
-        font-size: 1.1rem;
-        max-width: 800px;
-        margin: 0 auto;
-    }
+  /* Reset & global */
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Montserrat', sans-serif; }
+  body { background:#000; color:#fff; }
+
+  /* Navigation */
+  nav { display:flex; justify-content:space-between; align-items:center; padding:20px 50px; background:rgba(0,0,0,0.8); position:fixed; width:100%; z-index:1000; }
+  nav img { height:50px; }
+  nav ul { display:flex; list-style:none; gap:30px; }
+  nav ul li a { text-decoration:none; color:#D4AF37; font-weight:600; transition:color 0.3s; }
+  nav ul li a:hover { color:#fff; }
+
+  /* Hero Section */
+  .hero { height:100vh; background: url('https://images.unsplash.com/photo-1542377288-6335f52b3a8e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhfDEzfHx0cmF2ZWx8ZW58MHx8fHwxNjg3MDQ5NDQw&ixlib=rb-4.0.3&q=80&w=1600') center/cover no-repeat; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; }
+  .hero h1 { color:#D4AF37; font-size:4rem; margin-bottom:20px; text-shadow: 2px 2px 10px #000; }
+  .hero p { color:#fff; font-size:1.5rem; margin-bottom:30px; text-shadow: 1px 1px 5px #000; }
+  .hero a { text-decoration:none; background:#D4AF37; color:#000; padding:15px 30px; border-radius:50px; font-weight:700; margin:5px; transition:all 0.3s; }
+  .hero a:hover { background:#fff; color:#000; transform:scale(1.05); }
+
+  /* Sections */
+  section { padding:100px 50px; max-width:1200px; margin:auto; }
+  h2 { color:#D4AF37; font-size:2.5rem; margin-bottom:50px; text-align:center; }
+
+  /* Cards */
+  .cards { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
+  .card { background:#111; border-radius:15px; overflow:hidden; width:300px; transition:transform 0.3s, box-shadow 0.3s; box-shadow:0 10px 30px rgba(0,0,0,0.5); }
+  .card img { width:100%; height:200px; object-fit:cover; }
+  .card .content { padding:20px; text-align:center; }
+  .card h3 { color:#D4AF37; margin-bottom:10px; }
+  .card p { color:#ccc; font-size:0.95rem; }
+  .card:hover { transform:translateY(-10px); box-shadow:0 15px 35px rgba(0,0,0,0.7); }
+
+  /* Testimonials */
+  .testimonials { background:#111; border-radius:15px; padding:50px; margin-top:50px; }
+  .testimonial { background:#000; padding:20px; margin:20px; border-radius:15px; box-shadow:0 5px 20px rgba(0,0,0,0.5); transition:transform 0.3s; }
+  .testimonial:hover { transform:translateY(-5px); }
+  .testimonial p { font-style:italic; color:#ccc; }
+  .testimonial h4 { color:#D4AF37; margin-top:10px; }
+
+  /* Footer */
+  footer { text-align:center; padding:30px; color:#ccc; background:#111; }
+
+  /* Responsive */
+  @media(max-width:768px){ nav { flex-direction:column; gap:10px; } .hero h1{ font-size:3rem; } .hero p{ font-size:1.2rem; } .cards { flex-direction:column; align-items:center; } }
 </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>ABC Tours and Travel</h1>
-    <p class="intro">
-        Explore South Africa like never before. Book premium accommodations and exciting tours with ABC Tours and Travel. Self-taught Full Stack Developer showcasing interactive booking demos.
-    </p>
+<!-- Navigation -->
+<nav>
+  <img src="https://via.placeholder.com/150x50.png?text=ABC+Tours+Logo" alt="Logo">
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#accommodations">Accommodations</a></li>
+    <li><a href="#tours">Tours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- Navigation Cards -->
-    <div class="cards">
-        
-        <!-- Accommodations -->
-        <a href="accommodations.html" style="text-decoration:none;">
-            <div class="card">
-                <img src="images/forestedge.jpg" alt="Accommodations">
-                <h2>Accommodations</h2>
-                <p>View available accommodations with premium booking form and beautiful locations.</p>
-            </div>
-        </a>
-
-        <!-- Tours -->
-        <a href="tours.html" style="text-decoration:none;">
-            <div class="card">
-                <img src="images/tour1.jpg" alt="Tours">
-                <h2>Tours</h2>
-                <p>Explore our curated tours across South Africa with interactive booking options.</p>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- About Section -->
-    <div class="about">
-        <h2>About ABC Tours and Travel</h2>
-        <p>
-            ABC Tours and Travel is dedicated to delivering unforgettable travel experiences in South Africa. We specialize in providing premium accommodations, exciting tours, and seamless booking systems. Explore, book, and enjoy your journey with us.
-        </p>
-    </div>
+<!-- Hero -->
+<div class="hero" id="hero">
+  <h1>ABC Tours and Travel</h1>
+  <p>Explore South Africa like never before</p>
+  <a href="#accommodations">View Accommodations</a>
+  <a href="#tours">Explore Tours</a>
 </div>
+
+<!-- Accommodations Section -->
+<section id="accommodations">
+  <h2>Featured Accommodations</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1571501679680-de32f1e7aad4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Forest Edge Nature Retreat">
+      <div class="content">
+        <h3>Forest Edge Nature Retreat</h3>
+        <p>Knysna | R1600 per night | Luxury lodge with stunning forest views</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Seaside Paradise">
+      <div class="content">
+        <h3>Seaside Paradise</h3>
+        <p>Paternoster | R1800 per night | Beachfront accommodation for a relaxing stay</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Mountain View Lodge">
+      <div class="content">
+        <h3>Mountain View Lodge</h3>
+        <p>Drakensberg | R2000 per night | Cozy lodge with breathtaking mountain views</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Safari Adventure Camp">
+      <div class="content">
+        <h3>Safari Adventure Camp</h3>
+        <p>Kruger Park | R2200 per night | Experience luxury safari in style</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tours Section -->
+<section id="tours">
+  <h2>Featured Tours</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1533106418989-88406d4d7f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Wine Tasting Tour">
+      <div class="content">
+        <h3>Wine Tasting Tour</h3>
+        <p>Stellenbosch | Half-day tour | Explore premium vineyards and tastings</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549887534-58f14b6b786b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Safari Experience">
+      <div class="content">
+        <h3>Safari Experience</h3>
+        <p>Kruger Park | Full-day tour | Enjoy the Big 5 with expert guides</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Cape Town City Tour">
+      <div class="content">
+        <h3>Cape Town City Tour</h3>
+        <p>Cape Town | Half-day tour | Discover the beauty and history of the city</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560860587-77f40d87f1b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400" alt="Adventure Hiking">
+      <div class="content">
+        <h3>Adventure Hiking</h3>
+        <p>Drakensberg | Full-day tour | Guided hikes through scenic mountain trails</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <div class="cards">
+    <div class="testimonial">
+      <p>"ABC Tours made our South African adventure unforgettable. Highly recommend!"</p>
+      <h4>- Sarah J.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Luxury accommodations and amazing tours. The booking process was seamless."</p>
+      <h4>- Mark T.</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Fantastic customer service and beautiful locations. We'll be back next year!"</p>
+      <h4>- Priya R.</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p style="text-align:center; max-width:600px; margin:auto; color:#ccc;">
+    Email: info@abctours.co.za | Phone: +27 73 308 6462 | Address: Cape Town, South Africa
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 ABC Tours and Travel. All Rights Reserved.
+</footer>
 
 </body>
 </html>
